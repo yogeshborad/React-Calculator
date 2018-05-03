@@ -1,6 +1,10 @@
 import React from 'react'
 import update from 'immutability-helper';
-import math from 'mathjs'
+import math from 'mathjs';
+
+import Display from './Components/Display';
+import Buttons from './Components/Buttons';
+import Button from './Components/Button';
 import './App.css';
 
 class App extends React.Component{
@@ -67,35 +71,6 @@ class App extends React.Component{
   }
 }
 
-class Display extends React.Component{
-  render(){
-    const string = this.props.data.join('');
-    return (
-      <div className="Display">
-        {string}
-      </div>
-    );
-  }
-}
 
-class Buttons extends React.Component{
-  render() {
-    return (  
-      <div className="Buttons">
-        {this.props.children}
-      </div>
-    )
-  }
-}
-
-class Button extends React.Component{
-  render() {
-    return (
-      <div onClick={this.props.onClick} className="Button" data-size={this.props.size} data-value={this.props.value}>
-      {this.props.label}  
-      </div>
-    )
-  }
-}
 
 export default App;
